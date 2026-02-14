@@ -14,28 +14,27 @@ def main():
      
      links_adds = []
     
-     while True:
-        quantity_string = input('How many links do you want to process?: ').strip()
-        if quantity_string == '':
-            print(f'{RED}Invalid quantity, please try again!{RESET}')
-            continue
-        elif quantity_string.isdigit():
-            quantity = int(quantity_string)
-            if quantity <= 0:
-                print(f'{RED}Invalid quantity, please try again!{RESET}')
-                continue
-            break
-    
      if choice == '1':
-        for i in range(quantity):
-            print(f'{BLUE}Back to main menu: type "back" {RESET}')
-            link_youtube = input(f'Please paste your YouTube link {i+1}: ').strip()
-            if link_youtube.lower() == ('back'):
+         while True:
+             quantity_string = input('How many links do you want to process?: ').strip()
+             if quantity_string == '':
+                 print(f'{RED}Invalid quantity, please try again!{RESET}')
+                 continue
+             elif quantity_string.isdigit():
+                 quantity = int(quantity_string)
+                 if quantity <= 0:
+                     print(f'{RED}Invalid quantity, please try again!{RESET}')
+                     continue
+                 break
+         for i in range(quantity):
+             print(f'{BLUE}Back to main menu: type "back" {RESET}')
+             link_youtube = input(f'Please paste your YouTube link {i+1}: ').strip()
+             if link_youtube.lower() == ('back'):
                  break
             #sistema para verificar se o link funciona e é aceito pelo yt-dlp.
-            links_adds.append(link_youtube)
+             links_adds.append(link_youtube)
             #sistema para perguntar se o usuário quer baixar o video ou o audio!
-            #sistema para seleção de qualidade de video e audio disponiveis!        
+            #sistema para seleção de qualidade de video e audio disponiveis!       
 
      elif choice == '2':
         while True:
